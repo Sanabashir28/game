@@ -1,2 +1,26 @@
 # game
  hope you gyz really enjoyed  it.  this is my first project  where i had  made a  game to guess the number. 
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int main()
+{
+int nguesses=1,number,guess;
+srand(time(0));
+number=rand()%100+1; //generate a random number  between 1 and 100
+//keep running loop until the number is guessed 
+do{
+printf("guess the number betweeen 1 and 100\n");
+scanf("%d",&guess);
+if(guess>number){
+printf("lower number please \n");
+
+else if(guess<number){
+printf("you guessed it in %d attempts \n",nguesses);
+}
+nguesses++;
+}
+while(guess!=number);
+
+return 0;
+}
